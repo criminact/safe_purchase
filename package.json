@@ -1,0 +1,24 @@
+{
+  "name": "safe_purchase",
+  "version": "1.0.0",
+  "description": "Safe Purchase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/criminact/safe_purchase.git"
+  },
+  "author": "xriminact",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/criminact/safe_purchase/issues"
+  },
+  "homepage": "https://github.com/criminact/safe_purchase#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "web3": "^1.2.9"
+  }
+}
