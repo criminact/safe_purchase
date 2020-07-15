@@ -1,6 +1,6 @@
 # Safe Purchase Smart Contract
 
-# This is based on Ropsten test network, get free test Ether here -> Faucet(https://faucet.ropsten.be/)
+This is based on Ropsten test network, get free test Ether here -> Faucet(https://faucet.ropsten.be/)
 
 # Requirements
  Ethereum Supported Web Browser, Meta Mask Web Extension
