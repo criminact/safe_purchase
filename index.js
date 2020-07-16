@@ -32,7 +32,10 @@ var searchContract = web3.eth.contract(abi);
 
 var account;
 
-web3.eth.getAccounts(function(err, accounts) {
+getAccounts(function(){});
+
+function getAccounts(){
+  web3.eth.getAccounts(function(err, accounts) {
   if (err != null) {
     alert("Error retrieving accounts.");
     return;
@@ -45,6 +48,7 @@ web3.eth.getAccounts(function(err, accounts) {
   console.log('Account: ' + account);
   web3.eth.defaultAccount = account;
 });
+}
 
 function overlayON(){
   document.getElementById("overlay").style.display = "block";
@@ -69,7 +73,6 @@ function searchContractAll(){
 
   console.log(useContract);
 
-//0x5849c2cf40b3b85bfcd76419b1bd447e98722f12
   doItAll(useContract, setItAll);
 }
 
@@ -77,9 +80,8 @@ var price, parameter;
 
 function contractCreation(){
 
-  //text hide
-  //document.getElementById("text").style.display = "none";
-  //show loading bar
+getAccounts();
+
 document.getElementById("creating").style.display = "block";
 
 price = document.getElementById("price").value;
@@ -120,6 +122,9 @@ deploy_contract.new(parameter, function(err, result){
 var value, buyer, seller, state;
 
 function buyProduct(){
+
+  getAccounts();
+
   useContract.confirmPurchase({from: account, value: web3.utils.toWei(value.toString(), 'ether'), gas: '4700000'}, function(err, result){
       console.log(result);
       doItAll(useContract, setItAll);
@@ -127,6 +132,8 @@ function buyProduct(){
 }
 
 function endContract(){
+  
+
   useContract.abortPurchase(function(err, result){
       console.log(result);
       doItAll(useContract, setItAll);
